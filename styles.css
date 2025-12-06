@@ -1,0 +1,361 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+:root {
+    --brand-font: "Abril Fatface", serif;
+    --body-font: "Figtree", sans-serif;
+    --midnight: #272c39;
+    --sky: #d4def2;
+    --sun: #ffcd62;
+    --violet: #808dff;
+    --snow: #f1f0f9;
+    --pine: #4f7954;
+    --berry: #b0163a;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.5rem;
+    background: url(images/pattern.png);
+    font-size: 1rem;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: var(--midnight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: var(--brand-font);
+    margin: 0;
+    font-size: 2.2rem;
+    color: var(--snow);
+    line-height: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    color: var(--snow);
+}
+
+li a:hover {
+    color: var(--sun);
+}
+
+li a:focus {
+    color: var(--violet);
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#intro {
+    padding: 60px 40px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#intro p {
+    display: block;
+    padding: 0 0 20px 0;
+    margin: 0 auto;
+    max-width: 50ch;
+}
+
+h2 {
+    font-size: 1.8rem;
+    padding: 20px 0;
+}
+
+/* spotlight content blocks */
+.spotlight {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.5rem;
+    column-gap: 1rem;
+    padding: 20px 150px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.spotlight img {
+    grid-column: 1;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.spotlight div {
+    grid-column: 2;
+}
+
+.spotlight h3 {
+    padding: 15px 0;
+    font-weight: 500;
+}
+
+.spotlight p {
+    max-width: 60ch;
+    padding: 0 30px;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+/*Contact page */
+#contact {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+#contact img {
+    width: 710px;
+    height: auto;
+}
+
+#contact p {
+    padding: 20px 30px;
+}
+
+span {
+    color: var(--berry);
+}
+
+/* form styling */
+.form-layout {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 10px;
+    max-width: 900px;
+    width: 100%;
+}
+
+
+form label, legend {
+    display: block;
+    font-weight: 700;
+    color: var(--midnight);
+    margin-bottom: 5px;
+}
+
+form input[type = "text"],
+form input[type = "email"],
+form input[type = "tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid var(--violet);
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus {
+    border-color: var(--midnight);
+}
+
+form input[type="text"]:invalid,
+form input[type="email"]:invalid,
+form input[type="tel"]:invalid{
+    border: 3px solid var(--berry);
+}
+
+
+fieldset,
+textarea,
+button[type = "submit"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fieldset styling */
+fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    border: 1.5px solid var(--violet);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+fieldset div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+}
+
+input[type = "radio"] {
+    appearance: none;
+   	margin: 0;
+	padding: 0;
+	border-radius: 0;
+	border: none;
+	font-size: 0;
+}
+
+input[type="radio"] + label::before {
+   	content: "\00a0";
+	font-size: 2.25em;
+	line-height: 0.65;
+   	border-radius: 50%;
+   	display: inline-block;  
+   	height: 20px;
+   	width: 22px;
+   	text-align: center;
+   	margin-right: 16px;
+   	border: 2px solid var(--violet);   
+}
+
+input[type="radio"]:checked + label::before {
+   	background: var(--sun);
+}
+
+input[type="radio"]:focus{
+	outline: none;
+}
+
+input[type="radio"]:focus + label::before {
+   	box-shadow: 0 0 0 2px var(--violet);
+}
+
+
+fieldset label {
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Textarea styling */
+textarea {
+    padding: 10px;
+    border: 1.5px solid var(--violet);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Button styling */
+button[type = "submit"] {
+    background-color: var(--midnight);
+    color: var(--snow);
+    padding: 12px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--violet);
+}
+
+button[type="submit"]:focus {
+    background-color: var(--pine);
+}
+
+/* Form left column */
+/* Full name */
+form .form-field:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Email */
+form .form-field:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+/* Phone */
+form .form-field:nth-of-type(3) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* Form right column */
+/* Fieldset */
+form > fieldset {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Comments */
+form > .cmt-grp {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+}
+
+.cmt-grp > textarea {
+    height: 75%;
+}
+
+/* Submit button */
+form > button {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 25px 0;
+    text-align: center;
+    background-color: var(--midnight);
+    color: var(--snow);
+}
